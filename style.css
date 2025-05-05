@@ -443,9 +443,9 @@
 
 .testimonials {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  overflow-x: hidden;
+  flex-direction: row;        /* slideram vajadzīgais horizontālais izkārtojums */
+  overflow: hidden;           /* paslēpj ārpus laukuma esošo saturu */
+  scroll-snap-type: x mandatory; /* ja izmanto CSS scroll snapping */
 }
 
 .testimonial {
@@ -847,26 +847,20 @@ footer {
   h2 {
     font-size: 2rem;
   }
-  
+
+    /* paslēpj visas navigācijas saites */
   .nav-links {
-    display: none;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: var(--background-dark);
-    flex-direction: column;
-    padding: 2rem;
-    gap: 1.5rem;
-    z-index: 99;
+    display: none !important;
   }
   
-  .nav-links.active {
-    display: flex;
+    /* paslēpj hamburger ikonu, lai izvēlne neparādītos vispār */
+  .hamburger {
+    display: none !important;
   }
   
   .hamburger {
     display: flex;
+  
   }
   
   .challenge-content {
@@ -881,11 +875,25 @@ footer {
   .step-line {
     left: 25px;
   }
-  
+  /* mobilajam un desktopam — horizontālais slīdnis */
   .testimonials {
-    flex-direction: column;
+    flex-direction: row !important;
   }
-  
+
+  /* dots vienmēr ar pietiekamu atstarpi */
+  .testimonial-dots {
+    display: flex;
+   justify-content: center;
+   gap: 1rem !important;
+    margin-top: 1rem;
+  }
+
+  .testimonial-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+  }
+
   .social-buttons {
     flex-direction: column;
   }
