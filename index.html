@@ -3,82 +3,441 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Herbo - Mācies efektīvi</title>
+  <meta name="description" content="Herbo - Gudra mācīšanās platforma, kas pārvērš zināšanu apguvi par aizraujošu piedzīvojumu">
+  <title>Herbo - Gudra mācīšanās</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Herbo</h1>
-      <p>Gudra, spēļveidīga mācīšanās platforma</p>
+  <header class="hero-section">
+    <nav class="main-nav">
+      <div class="container nav-container">
+        <div class="logo">
+          <a href="#" class="brand-name">Herbo<span class="dot">.</span></a>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="#courses"><i class="fas fa-book"></i> Kursi</a>
+          <a href="#how"><i class="fas fa-cogs"></i> Kā tas strādā</a>
+          <a href="#testimonials"><i class="fas fa-comments"></i> Atsauksmes</a>
+          <a href="#login" class="login-btn"><i class="fas fa-lock"></i> Pieslēgties</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1><span class="highlight">Mācies</span> kā <br>spēlē<span class="dot">.</span></h1>
+        <p class="hero-subtitle">Platforma, kas pārvērš mācīšanos par aizraujošu piedzīvojumu. Soli pa solim, ar praktisku pieeju un bez garlaicības.</p>
+        <div class="hero-buttons">
+          <button class="primary-btn" onclick="scrollToSection('courses')">Sākt mācīties</button>
+          <button class="secondary-btn" onclick="scrollToSection('how')">Uzzināt vairāk</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">10,000+</span>
+            <span class="stat-label">Lietotāji</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Kursi</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">95%</span>
+            <span class="stat-label">Apmierinātība</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/images/learn.gif" alt="Mācīšanās ilustrācija">
+        <div class="hero-decoration-1"></div>
+        <div class="hero-decoration-2"></div>
+      </div>
     </div>
   </header>
 
-  <nav>
-    <div class="container nav-links">
-      <a href="#">Sākums</a>
-      <a href="#courses">Kursi</a>
-      <a href="#challenges">Izaicinājumi</a>
-      <a href="#login">Pieslēgties</a>
-    </div>
-  </nav>
-
-  <section class="hero">
+  <section id="courses" class="courses-section">
     <div class="container">
-      <h2>Iegūsti prasmes spēles stilā</h2>
-      <p>Progress, līmeņi, izaicinājumi un balvas – mācies ar prieku!</p>
-      <button onclick="startLearning()">Sākt mācīties</button>
+      <div class="section-header">
+        <span class="section-tag">MŪSU PIEDĀVĀJUMS</span>
+        <h2>Ko Tu vari apgūt?</h2>
+        <p class="section-description">Izvēlies no plašā kursu klāsta un attīsti jaunas prasmes interaktīvā veidā</p>
+      </div>
+      
+      <div class="course-tabs">
+        <button class="tab-btn active" data-category="all">Visi kursi</button>
+        <button class="tab-btn" data-category="programming">Programmēšana</button>
+        <button class="tab-btn" data-category="data">Datu analīze</button>
+        <button class="tab-btn" data-category="math">Matemātika</button>
+      </div>
+      
+      <div class="course-grid">
+        <div class="course-card" data-category="programming">
+          <div class="course-card-header">
+            <span class="course-level">Iesācējiem</span>
+            <div class="course-icon"><i class="fas fa-laptop-code"></i></div>
+          </div>
+          <h3>Python pamati</h3>
+          <p>No nulles līdz profesionālim - pamati, cikli, funkcijas un datu struktūras</p>
+          <div class="course-card-footer">
+            <span class="course-modules"><i class="fas fa-layer-group"></i> 24 moduļi</span>
+            <button class="course-btn">Sākt kursu</button>
+          </div>
+        </div>
+        
+        <div class="course-card" data-category="programming">
+          <div class="course-card-header">
+            <span class="course-level">Vidējais</span>
+            <div class="course-icon"><i class="fab fa-js"></i></div>
+          </div>
+          <h3>JavaScript & DOM</h3>
+          <p>Izveido interaktīvas web lapas ar JavaScript dinamiku un DOM manipulācijām</p>
+          <div class="course-card-footer">
+            <span class="course-modules"><i class="fas fa-layer-group"></i> 18 moduļi</span>
+            <button class="course-btn">Sākt kursu</button>
+          </div>
+        </div>
+        
+        <div class="course-card" data-category="data">
+          <div class="course-card-header">
+            <span class="course-level">Iesācējiem</span>
+            <div class="course-icon"><i class="fas fa-chart-pie"></i></div>
+          </div>
+          <h3>Datu analīzes pamati</h3>
+          <p>Apgūsti datu apstrādi, vizualizāciju un pamata statistikas metodes</p>
+          <div class="course-card-footer">
+            <span class="course-modules"><i class="fas fa-layer-group"></i> 16 moduļi</span>
+            <button class="course-btn">Sākt kursu</button>
+          </div>
+        </div>
+        
+        <div class="course-card" data-category="math">
+          <div class="course-card-header">
+            <span class="course-level">Universāls</span>
+            <div class="course-icon"><i class="fas fa-calculator"></i></div>
+          </div>
+          <h3>Praktiskā matemātika</h3>
+          <p>No pamatiem līdz loģiskai domāšanai un pierādījumiem ar praktiskiem piemēriem</p>
+          <div class="course-card-footer">
+            <span class="course-modules"><i class="fas fa-layer-group"></i> 20 moduļi</span>
+            <button class="course-btn">Sākt kursu</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="courses-cta">
+        <button class="secondary-btn load-more-btn">Skatīt vairāk kursus <i class="fas fa-arrow-right"></i></button>
+      </div>
     </div>
   </section>
 
-  <section id="courses" class="courses container">
-    <h2>Populārie kursi</h2>
-    <div class="course-grid">
-      <div class="course-card">
-        <h3>Python pamati</h3>
-        <p>Mācies Python no nulles ar praktiskiem uzdevumiem</p>
-      </div>
-      <div class="course-card">
-        <h3>Matemātikas izaicinājumi</h3>
-        <p>No pamatiem līdz loģikai un pierādījumiem</p>
-      </div>
-      <div class="course-card">
-        <h3>SQL datubāzes</h3>
-        <p>Apgūsti SQL vaicājumus un datu analīzi</p>
+  <section class="features-section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Praktiski uzdevumi</h3>
+          <p>Mācies darot, nevis tikai lasot teoriju</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+          <h3>Gamifikācija</h3>
+          <p>Iegūsti XP, līmeņus un sasniegumu nozīmītes</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-users"></i></div>
+          <h3>Kopiena</h3>
+          <p>Risini izaicinājumus kopā ar citiem</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+          <h3>Sertifikācija</h3>
+          <p>Saņem apliecinājumu par apgūtajām prasmēm</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="challenges" class="gamification container">
-    <h2>Spēles elementi</h2>
-    <div class="card">
-      <h3 onclick="openChallenge()">📘 Izaicinājums: Atrisini uzdevumu</h3>
-      <p>Klikšķini, lai sāktu risināt un iegūtu XP.</p>
+  <section id="how" class="how-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">METODIKA</span>
+        <h2>Kā tas strādā?</h2>
+        <p class="section-description">Vienkāršs process, kas ved no nezināšanas līdz meistarībai</p>
+      </div>
+      
+      <div class="steps-container">
+        <div class="step-line"></div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Izvēlies kursu</h3>
+              <p>Vari sākt ar pamatiem vai mesties uzreiz pie specifiskām prasmēm, kas tevi interesē visvairāk.</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Risini uzdevumus</h3>
+              <p>Katrs solis ir interaktīvs un balstīts uz reālu loģiku, nevis lasīšanu vien. Mācies caur praktisku pieredzi.</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Saņem atgriezenisko saiti</h3>
+              <p>Tūlītēja atbilde par tavu progresu un ieteikumi, kā uzlabot savas prasmes vēl vairāk.</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Krāj XP un līmeņus</h3>
+              <p>Skaties progresu un krāj sertifikātus savā profilā. Pārspēj savus personīgos rekordus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="how-cta">
+        <button class="primary-btn" onclick="scrollToSection('courses')">Sākt ceļojumu</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="challenge-preview">
+    <div class="container">
+      <div class="challenge-content">
+        <div class="challenge-text">
+          <h2>Izmēģini <span class="highlight">bezmaksas</span> izaicinājumu</h2>
+          <p>Pamēģini, kā strādā mūsu interaktīvā mācīšanās platforma ar šo vienkāršo programmēšanas uzdevumu.</p>
+          <button class="primary-btn" id="openChallengeBtn">Sākt izaicinājumu</button>
+        </div>
+        <div class="challenge-image">
+          <div class="code-preview">
+            <div class="code-header">
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="code-filename">challenge.py</span>
+            </div>
+            <div class="code-content">
+              <pre><code># Tavs uzdevums:
+# Izveidot funkciju, kas atgriež skaitļa kvadrātu
+def square(x):
+    # Tavs kods šeit
+    pass
+
+# Pārbaudes tests
+print(square(7))</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonial-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ATSAUKSMES</span>
+        <h2>Ko saka lietotāji?</h2>
+        <p class="section-description">Iepazīsties ar mūsu lietotāju pieredzi un panākumiem</p>
+      </div>
+      
+      <div class="testimonials" id="testimonialsSlider">
+        <div class="testimonial">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"Herbo beidzot padarīja mācīšanos jautru. Es katru vakaru pabeidzu vismaz vienu izaicinājumu un jūtu, kā manas prasmes aug."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <strong>Artūrs K.</strong>
+              <span>Programmētājs, 32 gadi</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"Vienkāršs interfeiss, saprotami paskaidrojumi, ideāli man kā senioram. Tagad varu beidzot saprast, kā darbojas datori."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <strong>Māra Z.</strong>
+              <span>Pensionāre, 68 gadi</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testimonial-text">"Izmantoju Herbo, lai mācītos Python un datu analīzi. Pateicoties tam, es atradu savu pirmo darbu IT nozarē!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">L</div>
+            <div class="author-info">
+              <strong>Līga B.</strong>
+              <span>Datu analītiķe, 26 gadi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-controls">
+        <button class="testimonial-btn prev-btn" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots" id="testimonialDots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="testimonial-btn next-btn" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Gatavs <span class="highlight">sākt</span> savu mācību ceļojumu?</h2>
+        <p>Pievienojies tūkstošiem māceklim, kuri jau pilnveido savas prasmes ar Herbo.</p>
+        <div class="cta-buttons">
+          <button class="primary-btn" onclick="scrollToSection('courses')">Sākt mācīties</button>
+          <button class="ghost-btn" id="openLoginBtn">Pieslēgties kontam</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Herbo. Visas tiesības aizsargātas.</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#" class="footer-logo">Herbo<span class="dot">.</span></a>
+          <p class="footer-desc">Mācīšanās platforma, kas padara zināšanas pieejamas un aizraujošas ikvienam.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Kursi</h3>
+          <ul class="footer-links">
+            <li><a href="#">Programmēšana</a></li>
+            <li><a href="#">Datu analīze</a></li>
+            <li><a href="#">Matemātika</a></li>
+            <li><a href="#">Digitālā pratība</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Uzņēmums</h3>
+          <ul class="footer-links">
+            <li><a href="#">Par mums</a></li>
+            <li><a href="#">Karjera</a></li>
+            <li><a href="#">Blogi</a></li>
+            <li><a href="#">Kontakti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Palīdzība</h3>
+          <ul class="footer-links">
+            <li><a href="#">Biežāk uzdotie jautājumi</a></li>
+            <li><a href="#">Atbalsts</a></li>
+            <li><a href="#">Lietošanas noteikumi</a></li>
+            <li><a href="#">Privātuma politika</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Herbo. Radīts Latvijā ar ❤️</p>
+        <div class="language-select">
+          <select>
+            <option value="lv">Latviešu</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+          </select>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Uzdevuma un login modāļi -->
+  <!-- Challenge Modal -->
   <div id="challengeModal" class="modal hidden">
     <div class="modal-content">
-      <span class="close" onclick="closeChallenge()">&times;</span>
-      <h3>🧠 Uzdevums: Kas ir 7 × 6?</h3>
-      <input type="number" id="userAnswer" placeholder="Tava atbilde">
-      <button onclick="checkAnswer()">Iesniegt</button>
-      <p id="resultMsg"></p>
+      <div class="modal-header">
+        <h3>Izaicinājums: Python funkcija</h3>
+        <button class="close-btn" onclick="closeChallenge()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <p>Uzdevums: Uzraksti funkciju, kas aprēķina skaitļa kvadrātu un atgriež rezultātu.</p>
+        <div class="code-editor">
+          <pre><code>def square(x):
+    # Tavs kods šeit
+    return</code></pre>
+        </div>
+        <div class="challenge-input">
+          <label for="userAnswer">Rezultāts, ja x = 7?</label>
+          <input type="number" id="userAnswer" placeholder="Ievadi atbildi...">
+        </div>
+        <p id="resultMsg" class="result-message"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="secondary-btn" onclick="closeChallenge()">Atcelt</button>
+        <button class="primary-btn" onclick="checkAnswer()">Pārbaudīt</button>
+      </div>
     </div>
   </div>
 
+  <!-- Login Modal -->
   <div id="loginPrompt" class="modal hidden">
     <div class="modal-content">
-      <span class="close" onclick="closeLoginPrompt()">&times;</span>
-      <h3>Lai saņemtu XP, lūdzu ielogojies</h3>
-      <button onclick="simulateLogin()">Ielogoties</button>
+      <div class="modal-header">
+        <h3>Pieslēgties kontam</h3>
+        <button class="close-btn" onclick="closeLoginPrompt()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="email">E-pasts</label>
+          <input type="email" id="email" placeholder="tavs@epasts.lv">
+        </div>
+        <div class="form-group">
+          <label for="password">Parole</label>
+          <input type="password" id="password" placeholder="••••••••">
+        </div>
+        <div class="form-options">
+          <label class="checkbox">
+            <input type="checkbox" id="remember">
+            <span>Atcerēties mani</span>
+          </label>
+          <a href="#" class="forgot-password">Aizmirsi paroli?</a>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="secondary-btn register-btn">Reģistrēties</button>
+        <button class="primary-btn" onclick="simulateLogin()">Pieslēgties</button>
+      </div>
+      <div class="social-login">
+        <p>Vai pieslēgties ar</p>
+        <div class="social-buttons">
+          <button class="social-btn google"><i class="fab fa-google"></i> Google</button>
+          <button class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+        </div>
+      </div>
     </div>
   </div>
 
