@@ -1,12 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herbo - Mācies efektīvi</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a basic HTML page.</p>
+  <header>
+    <div class="container">
+      <h1>Herbo</h1>
+      <p>Gudra, spēļveidīga mācīšanās platforma</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-links">
+      <a href="#">Sākums</a>
+      <a href="#courses">Kursi</a>
+      <a href="#challenges">Izaicinājumi</a>
+      <a href="#login">Pieslēgties</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Iegūsti prasmes spēles stilā</h2>
+      <p>Progress, līmeņi, izaicinājumi un balvas – mācies ar prieku!</p>
+      <button onclick="startLearning()">Sākt mācīties</button>
+    </div>
+  </section>
+
+  <section id="courses" class="courses container">
+    <h2>Populārie kursi</h2>
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>Python pamati</h3>
+        <p>Mācies Python no nulles ar praktiskiem uzdevumiem</p>
+      </div>
+      <div class="course-card">
+        <h3>Matemātikas izaicinājumi</h3>
+        <p>No pamatiem līdz loģikai un pierādījumiem</p>
+      </div>
+      <div class="course-card">
+        <h3>SQL datubāzes</h3>
+        <p>Apgūsti SQL vaicājumus un datu analīzi</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="challenges" class="gamification container">
+    <h2>Spēles elementi</h2>
+    <div class="card">
+      <h3 onclick="openChallenge()">📘 Izaicinājums: Atrisini uzdevumu</h3>
+      <p>Klikšķini, lai sāktu risināt un iegūtu XP.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Herbo. Visas tiesības aizsargātas.</p>
+    </div>
+  </footer>
+
+  <!-- Uzdevuma un login modāļi -->
+  <div id="challengeModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeChallenge()">&times;</span>
+      <h3>🧠 Uzdevums: Kas ir 7 × 6?</h3>
+      <input type="number" id="userAnswer" placeholder="Tava atbilde">
+      <button onclick="checkAnswer()">Iesniegt</button>
+      <p id="resultMsg"></p>
+    </div>
+  </div>
+
+  <div id="loginPrompt" class="modal hidden">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoginPrompt()">&times;</span>
+      <h3>Lai saņemtu XP, lūdzu ielogojies</h3>
+      <button onclick="simulateLogin()">Ielogoties</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
